@@ -12,12 +12,12 @@ mode: dark # default theme "dark" | "light"
 author:
   name: Dimas Tri Sasongko # author name
   bio: >- # tell to the world
-    A System Administrator & Network Engineer, more than three years of experience, Accustomed to using the Linux operating system and I also implement it with Cloud Computing, AWS Digital Ocean & Linode. Have experience using MikroTik and Sophos-XG Firewall.
+    A System Administrator & Network Engineer, more than three years of experience, Accustomed to using the Linux operating system and I also implement it with Cloud Computing, AWS Digital Ocean & Linode.
   username: maginati0n # general username
   github: maginati0n # github username
   twitter: dimastrisngko # twitter username
   facebook: dimarshall404 # facebook username
-  email: me@dimastrisasongko.id # email adress
+  email: dimastrisasongko@live.com # email adress
   avatar: /assets/img/avatar.jpg # change with your own avatar
 
 # URL settings
