@@ -1,1 +1,65 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-US"><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en-US" /><updated>2022-09-28T16:29:39+07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Klise Theme</title><subtitle>He's writing in Bahasa about web technology and experience as a journal  for documentation things that he learned, meet him &lt;a href=&quot;https://github.com/piharpi&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;@github&lt;/a&gt;.</subtitle><author><name>Dimas Tri Sasongko</name><email>me@dimastrisasongko.id</email></author></feed>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-US"><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en-US" /><updated>2023-04-09T03:15:35+07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Hello There!</title><subtitle>Im writing in Bahasa about web technology and experience as a journal  for documentation things that he learned, meet him &lt;a href=&quot;https://github.com/maginati0n&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;@github&lt;/a&gt;.</subtitle><author><name>Dimas Tri Sasongko</name><email>dimastrisasongko@live.com</email></author><entry><title type="html">Using Kaniko To Build And Push Images To Ecr From Gitlab Ci</title><link href="http://localhost:4000/Using-Kaniko-to-build-and-push-images-to-ECR-from-Gitlab-CI/" rel="alternate" type="text/html" title="Using Kaniko To Build And Push Images To Ecr From Gitlab Ci" /><published>2023-04-09T00:00:00+07:00</published><updated>2023-04-09T00:00:00+07:00</updated><id>http://localhost:4000/Using-Kaniko-to-build-and-push-images-to-ECR-from-Gitlab-CI</id><content type="html" xml:base="http://localhost:4000/Using-Kaniko-to-build-and-push-images-to-ECR-from-Gitlab-CI/"><![CDATA[<h1 id="using-kaniko-to-build-and-push-images-to-ecr-aws-from-gitlab-ci">Using Kaniko To Build And Push Images To ECR AWS From Gitlab Ci</h1>
+
+<p>In this guide, we will walk through the steps of using Kaniko to build and push Docker images to AWS Elastic Container Registry (ECR) from GitLab CI. Kaniko is a tool that allows building Docker images without requiring a Docker daemon, which makes it perfect for building images in a CI/CD pipeline. We will also set up an AWS ECR repository and push the built image to it.</p>
+
+<h3 id="prerequisites">Prerequisites</h3>
+
+<p>Before we begin, make sure you have the following:</p>
+
+<ul>
+  <li>A GitLab account with admin access to the repository</li>
+  <li>An AWS account with admin access to ECR</li>
+</ul>
+
+<h3 id="step-1-setting-up-aws-ecr">Step 1: Setting up AWS ECR</h3>
+
+<p>First, let’s create an ECR repository to store our Docker images.</p>
+
+<ol>
+  <li>Navigate to the AWS Management Console and search for “ECR” in the search bar.</li>
+  <li>Click “Create repository” to create a new repository. Give it a name and leave the other settings as default.</li>
+  <li>Once the repository is created, click on it to view its details. Make a note of the repository URI, as we will need it later.</li>
+</ol>
+
+<h3 id="step-2-configuring-gitlab-ci">Step 2: Configuring GitLab CI</h3>
+
+<p>Next, we need to add the necessary configuration to our GitLab CI file to build and push the Docker image to ECR using Kaniko.</p>
+
+<ol>
+  <li>Create a <code class="language-plaintext highlighter-rouge">.gitlab-ci.yml</code> file in the root of your repository.</li>
+  <li>Add the following code to the file:</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>image: gcr.io/kaniko-project/executor:latest
+
+variables:
+  DOCKER_REGISTRY: &lt;your-aws-account-id&gt;.dkr.ecr.&lt;your-region&gt;.amazonaws.com
+  IMAGE_NAME: &lt;your-ecr-repository-name&gt;
+  IMAGE_TAG: $CI_COMMIT_SHA
+
+before_script:
+  - echo "{\\"auths\\":{\\"$DOCKER_REGISTRY\\":{\\"auth\\":\\"$(echo -n $AWS_ACCESS_KEY_ID:$AWS_SECRET_ACCESS_KEY | base64)\\"}}}" &gt; /kaniko/.docker/config.json
+  - echo "{\\"credHelpers\\":{\\"$DOCKER_REGISTRY\\":\\"ecr-login\\"}}" &gt; /kaniko/.docker/config.json
+  - export AWS_REGION=&lt;your-region&gt;
+
+build:
+  script:
+    - /kaniko/executor --context $CI_PROJECT_DIR --dockerfile $CI_PROJECT_DIR/Dockerfile --destination $DOCKER_REGISTRY/$IMAGE_NAME:$IMAGE_TAG --cache=true
+  tags:
+    - docker
+
+</code></pre></div></div>
+
+<p>Make sure to replace <code class="language-plaintext highlighter-rouge">&lt;your-aws-account-id&gt;</code>, <code class="language-plaintext highlighter-rouge">&lt;your-region&gt;</code>, and <code class="language-plaintext highlighter-rouge">&lt;your-ecr-repository-name&gt;</code> with your own values.</p>
+
+<h3 id="step-3-pushing-the-docker-image-to-ecr">Step 3: Pushing the Docker Image to ECR</h3>
+
+<p>With the GitLab CI configuration in place, we can now push the Docker image to ECR.</p>
+
+<ol>
+  <li>Add, commit, and push your code changes to the GitLab repository.</li>
+  <li>Wait for the pipeline to run and complete.</li>
+  <li>Navigate to your AWS ECR repository and verify that the Docker image has been pushed successfully.</li>
+</ol>
+
+<p>Congratulations! You have successfully used Kaniko to build and push Docker images to AWS ECR from GitLab CI. This will enable you to automate your build and deployment process, and ensure that your Docker images are always up-to-date and available to your team.</p>]]></content><author><name>Dimas Tri Sasongko</name><email>dimastrisasongko@live.com</email></author><summary type="html"><![CDATA[Using Kaniko To Build And Push Images To ECR AWS From Gitlab Ci]]></summary></entry></feed>
