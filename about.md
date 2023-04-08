@@ -2,13 +2,19 @@
 title: Nǐ hǎo
 permalink: /about/
 layout: page
-excerpt: Hi everyone ! I am a System Administrator / DevOps Engineer, live in Bandung. This blog for documentation about my programming journey, running on jekyll, hosting on GithubPages and using piharpi theme.
+excerpt:  Hello everyone! My name is {Your Name} and I am a System Administrator / DevOps Engineer based in Bandung. I have created this blog to document my DevOps journey and share my experiences with others.
 comments: false
 ---
 
 
 
- Hi everyone ! I am a System Administrator / DevOps Engineer, live in Bandung. This blog for documentation about my programming journey, running on jekyll, hosting on GithubPages and using piharpi theme.
+Hello everyone! My name is {Your Name} and I am a System Administrator / DevOps Engineer based in Bandung. I have created this blog to document my DevOps journey and share my experiences with others.
+
+This blog is running on Jekyll, a static site generator, and is hosted on GitHub Pages. I have chosen the Piharpi theme for its clean and minimalist design, which allows me to focus on the content of my blog.
+
+Through this blog, I hope to share my knowledge and experiences with DevOps and system administration. I will be documenting my projects, tutorials, and tips on various topics related to my field.
+
+Thank you for joining me on this journey!!
 
 If you have a question about me, just sent your email to <a href="mailto:dimastrisasongko@live.com">dimastrisasongko@live.com</a>
 
