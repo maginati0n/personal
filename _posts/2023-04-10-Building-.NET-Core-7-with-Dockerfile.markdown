@@ -1,0 +1,83 @@
+# Building .NET Core 7 with Dockerfile
+In recent years, Docker has become an increasingly popular platform for building, deploying, and running applications. Docker allows developers to package their applications and dependencies into containers, which can be easily deployed to any environment that supports Docker. In this article, we will explore how to build a .NET Core 7 application using Dockerfile.
+
+### Prerequisites
+Before getting started, you will need to have the following installed on your system:
+
+- Docker
+- .NET Core 7 SDK
+
+### Creating a .NET Core 7 Application
+Let's begin by creating a new .NET Core 7 application. Open a terminal window and run the following command:
+
+
+```
+dotnet new console --name MyDotNetApp
+```
+This will create a new console application named "MyDotNetApp" in a new folder. Navigate into the folder by running:
+
+
+```
+cd MyDotNetApp
+```
+Now, let's build the application by running:
+
+
+```
+dotnet build
+```
+
+This will create a new folder named "bin" in the root of your project folder. Inside the "bin" folder, you will find a folder named "Debug" which contains the built executable for your application.
+
+### Creating a Dockerfile
+
+Next, let's create a Dockerfile which will allow us to build a Docker image of our application. Create a new file named "Dockerfile" in the root of your project folder and add the following code:
+
+```
+FROM mcr.microsoft.com/dotnet/sdk:7 AS build-env
+WORKDIR /app
+
+COPY . ./
+RUN dotnet publish -c Release -o out
+
+FROM mcr.microsoft.com/dotnet/runtime:7
+WORKDIR /app
+COPY --from=build-env /app/out ./
+
+ENTRYPOINT ["dotnet", "MyDotNetApp.dll"]
+```
+
+Let's go over what each line in this Dockerfile does:
+
+- The FROM command specifies the base image for our Docker image. We are using the official .NET Core 7 SDK image.
+- The WORKDIR command sets the working directory inside the container to /app.
+- The COPY command copies the contents of our current directory into the container's /app directory.
+- The RUN command runs the dotnet publish command, which builds and publishes our application in Release mode to the out folder.
+- The FROM command specifies the base image for our runtime image. We are using the official .NET Core 7 runtime image.
+- The COPY command copies the contents of the /app/out folder (which was created in the previous build stage) into the container's /app directory.
+- The ENTRYPOINT command specifies the command that should be run when the container starts. In this case, we are running dotnet MyDotNetApp.dll.
+
+### Building the Docker Image
+
+Now that we have our Dockerfile, we can build the Docker image. Open a terminal window and navigate to the root of your project folder. Run the following command:
+
+
+```
+docker build -t mydotnetapp .
+```
+
+This will build a Docker image of your application with the tag mydotnetapp.
+
+### Running the Docker Container
+Now that we have our Docker image, we can run it in a Docker container. Run the following command:
+
+
+```
+docker run mydotnetapp
+```
+
+This will start a new Docker container with your application running inside it. You should see the output of your console application printed to the terminal.
+
+### Conclusion
+
+In this article, we have learned how to build a .NET Core 7 application using a Dockerfile. We created a simple console application, created a Dockerfile to build a Docker image of our application, and then ran it in a Docker container. Using Docker, we can easily package and deploy our applications to any environment that supports Docker, making it a powerful tool for modern software development.
