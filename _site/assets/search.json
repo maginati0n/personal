@@ -1,6 +1,22 @@
 [
   
     {
+      "title"    : "How To Use Cloudfront For S3 In Aws",
+      "description" : "",
+      "tags"     : "",
+      "url"      : "//How-to-Use-CloudFront-for-S3-in-AWS/",
+      "date"     : "2023-04-18 00:00:00 +0700"
+    } ,
+  
+    {
+      "title"    : "Building .net Core 7 With Dockerfile",
+      "description" : "",
+      "tags"     : "",
+      "url"      : "//Building-.NET-Core-7-with-Dockerfile/",
+      "date"     : "2023-04-10 00:00:00 +0700"
+    } ,
+  
+    {
       "title"    : "Using Kaniko To Build And Push Images To Ecr From Gitlab Ci",
       "description" : "",
       "tags"     : "",

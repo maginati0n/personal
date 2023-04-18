@@ -1,4 +1,134 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-US"><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en-US" /><updated>2023-04-09T21:45:00+07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Hello There!</title><subtitle>Im writing in Bahasa about web technology and experience as a journal  for documentation things that he learned, meet him &lt;a href=&quot;https://github.com/maginati0n&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;@github&lt;/a&gt;.</subtitle><author><name>Dimas Tri Sasongko</name><email>dimastrisasongko@live.com</email></author><entry><title type="html">Using Kaniko To Build And Push Images To Ecr From Gitlab Ci</title><link href="http://localhost:4000/Using-Kaniko-to-build-and-push-images-to-ECR-from-Gitlab-CI/" rel="alternate" type="text/html" title="Using Kaniko To Build And Push Images To Ecr From Gitlab Ci" /><published>2023-04-09T00:00:00+07:00</published><updated>2023-04-09T00:00:00+07:00</updated><id>http://localhost:4000/Using-Kaniko-to-build-and-push-images-to-ECR-from-Gitlab-CI</id><content type="html" xml:base="http://localhost:4000/Using-Kaniko-to-build-and-push-images-to-ECR-from-Gitlab-CI/"><![CDATA[<h1 id="using-kaniko-to-build-and-push-images-to-ecr-aws-from-gitlab-ci">Using Kaniko To Build And Push Images To ECR AWS From Gitlab Ci</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-US"><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en-US" /><updated>2023-04-18T23:17:09+07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Hello There!</title><subtitle>Im writing in Bahasa about web technology and experience as a journal  for documentation things that he learned, meet him &lt;a href=&quot;https://github.com/maginati0n&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;@github&lt;/a&gt;.</subtitle><author><name>Dimas Tri Sasongko</name><email>dimastrisasongko@live.com</email></author><entry><title type="html">How To Use Cloudfront For S3 In Aws</title><link href="http://localhost:4000/How-to-Use-CloudFront-for-S3-in-AWS/" rel="alternate" type="text/html" title="How To Use Cloudfront For S3 In Aws" /><published>2023-04-18T00:00:00+07:00</published><updated>2023-04-18T00:00:00+07:00</updated><id>http://localhost:4000/How-to-Use-CloudFront-for-S3-in-AWS</id><content type="html" xml:base="http://localhost:4000/How-to-Use-CloudFront-for-S3-in-AWS/"><![CDATA[<h1 id="how-to-use-cloudfront-for-s3-in-aws">How to Use CloudFront for S3 in AWS</h1>
+
+<p>Amazon Web Services (AWS) offers a variety of services to help you manage your website’s content. One of these services is Amazon S3, a storage service that allows you to store and retrieve data from anywhere on the web. Another service is Amazon CloudFront, a content delivery network that allows you to distribute your content to users all over the world quickly and securely. In this article, we will explore how to use CloudFront for S3 in AWS.</p>
+
+<h2 id="step-1-create-an-s3-bucket">Step 1: Create an S3 Bucket</h2>
+
+<p>The first step is to create an S3 bucket that will store the content you want to distribute through CloudFront. You can do this by following these steps:</p>
+
+<ol>
+  <li>Log in to the AWS Management Console.</li>
+  <li>Navigate to the S3 service.</li>
+  <li>Click on the “Create bucket” button.</li>
+  <li>Enter a unique name for your bucket and choose a region.</li>
+  <li>Click on the “Create” button.</li>
+</ol>
+
+<h2 id="step-2-upload-your-content-to-the-s3-bucket">Step 2: Upload Your Content to the S3 Bucket</h2>
+
+<p>Once you have created your S3 bucket, you can now upload your content to it. This can be done by following these steps:</p>
+
+<ol>
+  <li>Navigate to the S3 service in the AWS Management Console.</li>
+  <li>Click on the name of the bucket you just created.</li>
+  <li>Click on the “Upload” button.</li>
+  <li>Select the files you want to upload.</li>
+  <li>Click on the “Upload” button.</li>
+</ol>
+
+<h2 id="step-3-create-a-cloudfront-distribution">Step 3: Create a CloudFront Distribution</h2>
+
+<p>Now that your content is stored in an S3 bucket, you need to create a CloudFront distribution that will serve as the entry point for your content. You can do this by following these steps:</p>
+
+<ol>
+  <li>Navigate to the CloudFront service in the AWS Management Console.</li>
+  <li>Click on the “Create Distribution” button.</li>
+  <li>Choose the “Web” distribution type.</li>
+  <li>Enter the domain name you want to use for your distribution.</li>
+  <li>Choose the S3 bucket you just created as the origin.</li>
+  <li>Click on the “Create” button.</li>
+</ol>
+
+<h2 id="step-4-update-your-dns-settings">Step 4: Update Your DNS Settings</h2>
+
+<p>The final step is to update your DNS settings to point to your CloudFront distribution. You can do this by following these steps:</p>
+
+<ol>
+  <li>Navigate to your domain registrar’s website.</li>
+  <li>Update your DNS settings to point to your CloudFront distribution’s domain name.</li>
+  <li>Wait for the DNS changes to propagate.</li>
+</ol>
+
+<p>Once the DNS changes have propagated, your content will be available through CloudFront.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>In conclusion, using CloudFront for S3 in AWS is a powerful way to distribute your content quickly and securely to users all over the world. By following the steps outlined in this article, you can easily set up your own CloudFront distribution and start delivering your content to your users.</p>]]></content><author><name>Dimas Tri Sasongko</name><email>dimastrisasongko@live.com</email></author><summary type="html"><![CDATA[How to Use CloudFront for S3 in AWS]]></summary></entry><entry><title type="html">Building .net Core 7 With Dockerfile</title><link href="http://localhost:4000/Building-.NET-Core-7-with-Dockerfile/" rel="alternate" type="text/html" title="Building .net Core 7 With Dockerfile" /><published>2023-04-10T00:00:00+07:00</published><updated>2023-04-10T00:00:00+07:00</updated><id>http://localhost:4000/Building-.NET-Core-7-with-Dockerfile</id><content type="html" xml:base="http://localhost:4000/Building-.NET-Core-7-with-Dockerfile/"><![CDATA[<h1 id="building-net-core-7-with-dockerfile">Building .NET Core 7 with Dockerfile</h1>
+<p>In recent years, Docker has become an increasingly popular platform for building, deploying, and running applications. Docker allows developers to package their applications and dependencies into containers, which can be easily deployed to any environment that supports Docker. In this article, we will explore how to build a .NET Core 7 application using Dockerfile.</p>
+
+<h3 id="prerequisites">Prerequisites</h3>
+<p>Before getting started, you will need to have the following installed on your system:</p>
+
+<ul>
+  <li>Docker</li>
+  <li>.NET Core 7 SDK</li>
+</ul>
+
+<h3 id="creating-a-net-core-7-application">Creating a .NET Core 7 Application</h3>
+<p>Let’s begin by creating a new .NET Core 7 application. Open a terminal window and run the following command:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dotnet new console --name MyDotNetApp
+</code></pre></div></div>
+<p>This will create a new console application named “MyDotNetApp” in a new folder. Navigate into the folder by running:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd MyDotNetApp
+</code></pre></div></div>
+<p>Now, let’s build the application by running:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dotnet build
+</code></pre></div></div>
+
+<p>This will create a new folder named “bin” in the root of your project folder. Inside the “bin” folder, you will find a folder named “Debug” which contains the built executable for your application.</p>
+
+<h3 id="creating-a-dockerfile">Creating a Dockerfile</h3>
+
+<p>Next, let’s create a Dockerfile which will allow us to build a Docker image of our application. Create a new file named “Dockerfile” in the root of your project folder and add the following code:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>FROM mcr.microsoft.com/dotnet/sdk:7 AS build-env
+WORKDIR /app
+
+COPY . ./
+RUN dotnet publish -c Release -o out
+
+FROM mcr.microsoft.com/dotnet/runtime:7
+WORKDIR /app
+COPY --from=build-env /app/out ./
+
+ENTRYPOINT ["dotnet", "MyDotNetApp.dll"]
+</code></pre></div></div>
+
+<p>Let’s go over what each line in this Dockerfile does:</p>
+
+<ul>
+  <li>The FROM command specifies the base image for our Docker image. We are using the official .NET Core 7 SDK image.</li>
+  <li>The WORKDIR command sets the working directory inside the container to /app.</li>
+  <li>The COPY command copies the contents of our current directory into the container’s /app directory.</li>
+  <li>The RUN command runs the dotnet publish command, which builds and publishes our application in Release mode to the out folder.</li>
+  <li>The FROM command specifies the base image for our runtime image. We are using the official .NET Core 7 runtime image.</li>
+  <li>The COPY command copies the contents of the /app/out folder (which was created in the previous build stage) into the container’s /app directory.</li>
+  <li>The ENTRYPOINT command specifies the command that should be run when the container starts. In this case, we are running dotnet MyDotNetApp.dll.</li>
+</ul>
+
+<h3 id="building-the-docker-image">Building the Docker Image</h3>
+
+<p>Now that we have our Dockerfile, we can build the Docker image. Open a terminal window and navigate to the root of your project folder. Run the following command:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker build -t mydotnetapp .
+</code></pre></div></div>
+
+<p>This will build a Docker image of your application with the tag mydotnetapp.</p>
+
+<h3 id="running-the-docker-container">Running the Docker Container</h3>
+<p>Now that we have our Docker image, we can run it in a Docker container. Run the following command:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run mydotnetapp
+</code></pre></div></div>
+
+<p>This will start a new Docker container with your application running inside it. You should see the output of your console application printed to the terminal.</p>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>In this article, we have learned how to build a .NET Core 7 application using a Dockerfile. We created a simple console application, created a Dockerfile to build a Docker image of our application, and then ran it in a Docker container. Using Docker, we can easily package and deploy our applications to any environment that supports Docker, making it a powerful tool for modern software development.</p>]]></content><author><name>Dimas Tri Sasongko</name><email>dimastrisasongko@live.com</email></author><summary type="html"><![CDATA[Building .NET Core 7 with Dockerfile In recent years, Docker has become an increasingly popular platform for building, deploying, and running applications. Docker allows developers to package their applications and dependencies into containers, which can be easily deployed to any environment that supports Docker. In this article, we will explore how to build a .NET Core 7 application using Dockerfile.]]></summary></entry><entry><title type="html">Using Kaniko To Build And Push Images To Ecr From Gitlab Ci</title><link href="http://localhost:4000/Using-Kaniko-to-build-and-push-images-to-ECR-from-Gitlab-CI/" rel="alternate" type="text/html" title="Using Kaniko To Build And Push Images To Ecr From Gitlab Ci" /><published>2023-04-09T00:00:00+07:00</published><updated>2023-04-09T00:00:00+07:00</updated><id>http://localhost:4000/Using-Kaniko-to-build-and-push-images-to-ECR-from-Gitlab-CI</id><content type="html" xml:base="http://localhost:4000/Using-Kaniko-to-build-and-push-images-to-ECR-from-Gitlab-CI/"><![CDATA[<h1 id="using-kaniko-to-build-and-push-images-to-ecr-aws-from-gitlab-ci">Using Kaniko To Build And Push Images To ECR AWS From Gitlab Ci</h1>
 
 <p>In this guide, we will walk through the steps of using Kaniko to build and push Docker images to AWS Elastic Container Registry (ECR) from GitLab CI. Kaniko is a tool that allows building Docker images without requiring a Docker daemon, which makes it perfect for building images in a CI/CD pipeline. We will also set up an AWS ECR repository and push the built image to it.</p>
 
