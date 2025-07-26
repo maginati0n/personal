@@ -12,7 +12,7 @@ mode: dark # default theme "dark" | "light"
 author:
   name: Dimas Tri Sasongko # author name
   bio: >- # tell to the world
-    A DevOps Engineer with over three years of experience, who is adept in utilizing the Linux operating system and proficiently implements Cloud Computing using AWS, Digital Ocean & Linode.
+    A Cloud Engineer with over three years of experience, who is adept in utilizing the Linux operating system and proficiently implements Cloud Computing using AWS, Digital Ocean & Linode.
   username: maginati0n # general username
   github: maginati0n # github username
   twitter: dimastrisngko # twitter username
@@ -21,7 +21,7 @@ author:
   avatar: /assets/img/avatar.jpg # change with your own avatar
 
 # URL settings
-url: "https://dimastrisasongko.id" #
+url: "https://ditrisa.my.id" #
 baseurl: /
 permalink: /:title/
 google_analytics: # leave it blank if not wish
