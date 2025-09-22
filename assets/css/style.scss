@@ -2,3 +2,97 @@
 ---
 
 @import "main";
+
+// Custom CSS for timeline layout
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 2rem 0;
+  padding: 0;
+  position: relative;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  position: relative;
+}
+
+.timeline-marker {
+  flex: 0 0 14px;
+  height: 14px;
+  margin-top: 0.4rem;
+  border-radius: 50%;
+  background: #3498db;
+  position: relative;
+}
+
+.timeline-marker::after {
+  content: "";
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: calc(100% + 2rem);
+  background: #3498db;
+}
+
+.timeline-item:last-child .timeline-marker::after {
+  display: none;
+}
+
+.timeline-date {
+  font-weight: bold;
+  color: var(--text-muted, #aaa);
+  margin-bottom: 0.3rem;
+  font-size: 0.9rem;
+}
+
+.timeline-content {
+  flex: 1;
+}
+
+.timeline-content h3 {
+  margin: 0.2rem 0;
+  font-size: 1.2rem;
+}
+
+.timeline-content p {
+  margin: 0.2rem 0;
+  color: var(--text-secondary, #bbb);
+  font-size: 0.95rem;
+}
+
+.timeline-content ul {
+  margin: 0.5rem 0 0 1rem;
+  padding: 0;
+  list-style: disc;
+  font-size: 0.95rem;
+}
+
+/* ✅ Mobile friendly */
+@media (max-width: 600px) {
+  .timeline {
+    gap: 1.5rem;
+  }
+
+  .timeline-item {
+    gap: 0.7rem;
+  }
+
+  .timeline-marker {
+    flex: 0 0 12px;
+    height: 12px;
+  }
+
+  .timeline-content h3 {
+    font-size: 1.05rem;
+  }
+
+  .timeline-content ul {
+    font-size: 0.9rem;
+  }
+}
