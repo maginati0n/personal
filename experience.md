@@ -1,8 +1,29 @@
 ---
 layout: page
 title: "Experience"
+description: "Professional experience in cloud engineering, DevOps, and scalable infrastructure solutions."
 permalink: /experience/
+image: /assets/img/avatar.jpg
 ---
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Dimas Tri Sasongko",
+  "url": "https://ditrisa.my.id/experience/",
+  "image": "https://ditrisa.my.id/assets/img/avatar.jpg",
+  "jobTitle": "Cloud Engineer",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Westcon-Comstor Indonesia"
+  },
+  "sameAs": [
+    "https://github.com/maginati0n",
+    "https://www.linkedin.com/in/maginati0n/"
+  ]
+}
+</script>
 
 *Building scalable cloud solutions and supporting enterprise customers throughout my career journey.*
 
