@@ -33,10 +33,10 @@ image: /assets/img/avatar.jpg
 
 <div class="certifications">
 
-  <div class="cert-item">
+  <div class="cert-item" data-expires="2028-11-30">
     <div class="cert-header">
       <h3>🎯 AWS Certified Solutions Architect – Associate </h3>
-      <div class="cert-date">Issued: Nov 2025 · Expires: Nov 2028</div>
+      <div class="cert-date">Issued: Nov 2025 · <span class="expiry-date">Expires: Nov 2028</span></div>
     </div>
     <div class="cert-content">
       <p><strong>Amazon Web Services (AWS)</strong></p>
@@ -55,10 +55,10 @@ image: /assets/img/avatar.jpg
     </div>
   </div>
 
-  <div class="cert-item">
+  <div class="cert-item" data-expires="2025-03-15">
     <div class="cert-header">
       <h3>🎯 AWS Certified AI Practitioner </h3>
-      <div class="cert-date">Issued: Aug 2025 · Expires: Aug 2028</div>
+      <div class="cert-date">Issued: Aug 2025 · <span class="expiry-date">Expires: Aug 2028</span></div>
     </div>
     <div class="cert-content">
       <p><strong>Amazon Web Services (AWS)</strong></p>
@@ -77,10 +77,10 @@ image: /assets/img/avatar.jpg
     </div>
   </div>
 
-  <div class="cert-item">
+  <div class="cert-item" data-expires="2024-07-31">
     <div class="cert-header">
       <h3>🎯 AWS Certified Cloud Practitioner </h3>
-      <div class="cert-date">Issued: Jul 2023 · Expires: Jul 2026</div>
+      <div class="cert-date">Issued: Jul 2023 · <span class="expiry-date">Expired: Jul 2026</span></div>
     </div>
     <div class="cert-content">
       <p><strong>Amazon Web Services (AWS)</strong></p>
@@ -200,6 +200,69 @@ Currently pursuing:
   border: 1px solid rgba(0, 123, 255, 0.2);
 }
 
+/* Expiration status styles */
+.cert-item.expired {
+  background: rgba(220, 53, 69, 0.05);
+  border-color: rgba(220, 53, 69, 0.2);
+}
+
+.cert-item.expiring-soon {
+  background: rgba(255, 193, 7, 0.05);
+  border-color: rgba(255, 193, 7, 0.3);
+}
+
+.cert-item.expired .cert-header h3::after {
+  content: " ⚠️ EXPIRED";
+  color: #dc3545;
+  font-size: 0.7em;
+  font-weight: bold;
+}
+
+.cert-item.expiring-soon .cert-header h3::after {
+  content: " ⏰ EXPIRING SOON";
+  color: #ffc107;
+  font-size: 0.7em;
+  font-weight: bold;
+}
+
+.expiry-date.expired {
+  color: #dc3545;
+  font-weight: bold;
+}
+
+.expiry-date.expiring-soon {
+  color: #ffc107;
+  font-weight: bold;
+}
+
+.expiry-date.valid {
+  color: #28a745;
+}
+
+.expiry-status {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75em;
+  font-weight: bold;
+  margin-left: 0.5rem;
+}
+
+.expiry-status.expired {
+  background: #dc3545;
+  color: white;
+}
+
+.expiry-status.expiring-soon {
+  background: #ffc107;
+  color: #212529;
+}
+
+.expiry-status.valid {
+  background: #28a745;
+  color: white;
+}
+
 .training-list ul {
   list-style: none;
   padding-left: 0;
@@ -225,3 +288,81 @@ Currently pursuing:
   }
 }
 </style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    function checkCertificationExpiry() {
+        const certItems = document.querySelectorAll('.cert-item[data-expires]');
+        const today = new Date();
+        const threeMonthsFromNow = new Date();
+        threeMonthsFromNow.setMonth(today.getMonth() + 3);
+        
+        certItems.forEach(function(item) {
+            const expiryDateStr = item.getAttribute('data-expires');
+            const expiryDateElement = item.querySelector('.expiry-date');
+            
+            // Skip items that never expire
+            if (expiryDateStr === 'never' || expiryDateStr === 'no-expiration') {
+                if (expiryDateElement) {
+                    expiryDateElement.classList.add('valid');
+                }
+                return;
+            }
+            
+            const expiryDate = new Date(expiryDateStr);
+            
+            // Check if the date is valid
+            if (isNaN(expiryDate.getTime())) {
+                console.warn('Invalid expiry date format:', expiryDateStr);
+                return;
+            }
+            
+            // Add status indicator
+            let statusText = '';
+            let statusClass = '';
+            
+            if (expiryDate < today) {
+                // Expired
+                item.classList.add('expired');
+                statusClass = 'expired';
+                statusText = 'EXPIRED';
+                if (expiryDateElement) {
+                    expiryDateElement.classList.add('expired');
+                    // Update text to show "Expired" instead of "Expires"
+                    expiryDateElement.innerHTML = expiryDateElement.innerHTML.replace('Expires:', 'Expired:');
+                }
+            } else if (expiryDate <= threeMonthsFromNow) {
+                // Expiring soon (within 3 months)
+                item.classList.add('expiring-soon');
+                statusClass = 'expiring-soon';
+                const daysUntilExpiry = Math.ceil((expiryDate - today) / (1000 * 60 * 60 * 24));
+                statusText = `EXPIRES IN ${daysUntilExpiry} DAYS`;
+                if (expiryDateElement) {
+                    expiryDateElement.classList.add('expiring-soon');
+                }
+            } else {
+                // Valid
+                statusClass = 'valid';
+                statusText = 'VALID';
+                if (expiryDateElement) {
+                    expiryDateElement.classList.add('valid');
+                }
+            }
+            
+            // Add status badge
+            if (statusText && expiryDateElement) {
+                const statusBadge = document.createElement('span');
+                statusBadge.className = `expiry-status ${statusClass}`;
+                statusBadge.textContent = statusText;
+                expiryDateElement.appendChild(statusBadge);
+            }
+        });
+    }
+    
+    // Run the check when page loads
+    checkCertificationExpiry();
+    
+    // Optional: Re-check every hour (useful for long-running pages)
+    setInterval(checkCertificationExpiry, 3600000); // 1 hour = 3600000ms
+});
+</script>
