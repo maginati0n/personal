@@ -1,0 +1,171 @@
+@use "../variables" as *;
+
+// Certifications page styles
+.certifications {
+  margin: 2rem 0;
+}
+
+.cert-item {
+  background: rgba(128, 128, 128, 0.05);
+  border: 1px solid rgba(128, 128, 128, 0.1);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.cert-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+
+  h3 {
+    margin: 0;
+    color: $black;
+    font-size: 1.2em;
+  }
+}
+
+.cert-date {
+  font-size: 0.9em;
+  color: $gray;
+  font-weight: 500;
+}
+
+.cert-content {
+  p {
+    margin: 0.5rem 0;
+  }
+}
+
+.cert-skills {
+  margin-top: 1rem;
+}
+
+.skill-tag {
+  display: inline-block;
+  background: rgba(0, 123, 255, 0.1);
+  color: #007bff;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8em;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid rgba(0, 123, 255, 0.2);
+}
+
+// Expiration status styles
+.cert-item.expired {
+  background: rgba(220, 53, 69, 0.05);
+  border-color: rgba(220, 53, 69, 0.2);
+}
+
+.cert-item.expiring-soon {
+  background: rgba(255, 193, 7, 0.05);
+  border-color: rgba(255, 193, 7, 0.3);
+}
+
+.cert-item.expired .cert-header h3::after {
+  content: " ⚠️ EXPIRED";
+  color: #dc3545;
+  font-size: 0.7em;
+  font-weight: bold;
+}
+
+.cert-item.expiring-soon .cert-header h3::after {
+  content: " ⏰ EXPIRING SOON";
+  color: #ffc107;
+  font-size: 0.7em;
+  font-weight: bold;
+}
+
+.expiry-date.expired {
+  color: #dc3545;
+  font-weight: bold;
+}
+
+.expiry-date.expiring-soon {
+  color: #ffc107;
+  font-weight: bold;
+}
+
+.expiry-date.valid {
+  color: #28a745;
+}
+
+.expiry-status {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75em;
+  font-weight: bold;
+  margin-left: 0.5rem;
+
+  &.expired {
+    background: #dc3545;
+    color: white;
+  }
+
+  &.expiring-soon {
+    background: #ffc107;
+    color: #212529;
+  }
+
+  &.valid {
+    background: #28a745;
+    color: white;
+  }
+}
+
+.training-list {
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.1);
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+.training-date {
+  color: $gray;
+  font-size: 0.9em;
+  float: right;
+}
+
+.training-note {
+  font-style: italic;
+  color: $gray;
+  margin-top: 1rem;
+}
+
+// Mobile responsive
+@include media-query($on-mobile) {
+  .cert-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .cert-date {
+    margin-top: 0.5rem;
+  }
+
+  .training-date {
+    float: none;
+    display: block;
+    margin-top: 0.25rem;
+  }
+}
