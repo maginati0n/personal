@@ -82,6 +82,9 @@ exclude:
   - lighthouse.png
   - klise-*.gem
   - klise.gemspec
+  - GOOGLE_SEARCH_CONSOLE_SETUP.md
+  - SEO_CHECKLIST.md
+  - google-site-verification.html
 
 # Plugins
 plugins:
