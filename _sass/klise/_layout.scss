@@ -276,6 +276,38 @@
   }
 }
 
+// Archive page styles
+.archive-posts {
+  h2 {
+    margin-top: 2em;
+    margin-bottom: 1em;
+    font-size: 1.2em;
+    font-weight: 600;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+    
+    &:first-child {
+      margin-top: 1em;
+    }
+  }
+  
+  p {
+    margin-bottom: 0.5em;
+    margin-left: 0;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.1);
+    
+    a {
+      color: inherit;
+      text-decoration: none;
+      
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
 // Footer
 .footer {
   margin-top: 8em;

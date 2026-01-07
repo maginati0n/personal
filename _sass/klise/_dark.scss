@@ -181,6 +181,26 @@ body[data-theme="dark"] {
     }
   }
 
+  // Archive page dark mode
+  .archive-posts {
+    h2 {
+      color: $dark-white;
+      border-bottom-color: rgba(255, 255, 255, 0.2);
+    }
+    
+    p {
+      border-bottom-color: rgba(255, 255, 255, 0.1);
+      
+      a {
+        color: $dark-text-base-color;
+        
+        &:hover {
+          color: $dark-white;
+        }
+      }
+    }
+  }
+
   // Post Navigation
   .post-nav {
     border-color: $dark-light;

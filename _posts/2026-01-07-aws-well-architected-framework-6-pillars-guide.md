@@ -10,7 +10,7 @@ author: Dimas Tri Sasongko
 ---
 
 # AWS Well-Architected Framework: Complete Guide to the 6 Pillars
-
+![AWS Well-Architected Framework](/assets/img/aws-well-architected-framework.jpg)
 Building robust cloud applications on AWS requires more than just technical skills—it demands a structured approach to architecture. The **AWS Well-Architected Framework** provides exactly that: a comprehensive set of best practices organized into six fundamental pillars that ensure your cloud solutions are secure, reliable, and cost-effective.
 
 Think of these pillars as the foundation of a building. Just as a structure needs a solid foundation to remain stable, your AWS architecture needs these six pillars to deliver consistent performance and meet business requirements.

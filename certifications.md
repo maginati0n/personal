@@ -1,9 +1,10 @@
 ---
 layout: page
 title: "Certifications"
-description: "Professional certifications and achievements in cloud computing, DevOps, and system administration."
+description: "AWS certifications and professional credentials of Dimas Tri Sasongko. AWS Solutions Architect Associate, AWS AI Practitioner, AWS Cloud Practitioner certified professional."
 permalink: /certifications/
 image: /assets/img/avatar.jpg
+keywords: "AWS certifications, AWS Solutions Architect Associate, AWS AI Practitioner, AWS Cloud Practitioner, Dimas Tri Sasongko credentials, cloud certifications Indonesia"
 ---
 
 <script type="application/ld+json">

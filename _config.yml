@@ -1,15 +1,15 @@
 # Site settings
-title: "Dimas Tri Sasongko - Cloud Engineer & DevOps Expert" # SEO-optimized title
+title: "Dimas Tri Sasongko - AWS Cloud Engineer & CrowdStrike Expert" # SEO-optimized title
 description: >- # site description
-  Cloud Engineer with 3+ years experience in AWS, Digital Ocean & Linode. Expert in Linux, DevOps, Docker, and cloud infrastructure. Technical blog about web technology, cloud computing, and DevOps best practices.
+  AWS Cloud Engineer with 3+ years experience specializing in cloud infrastructure and cybersecurity. Expert in AWS services, CrowdStrike security solutions, Linux administration, and DevOps practices. Technical blog about AWS, cloud security, and infrastructure automation.
 lang: en-US # default lang
 timezone: Asia/Jakarta # set your timezone
 image: assets/img/ogp.png # This image used for Open Graph more info https://ogp.me/
 mode: dark # default theme "dark" | "light"
 
 # SEO Settings
-tagline: "Cloud Engineer & DevOps Expert"
-keywords: "cloud engineer, aws expert, devops, linux administrator, docker, kubernetes, digital ocean, linode, web technology, cloud computing, infrastructure, jakarta indonesia"
+tagline: "AWS Cloud Engineer & CrowdStrike Expert"
+keywords: "aws cloud engineer, crowdstrike expert, aws solutions architect, cloud security, linux administrator, devops engineer, aws infrastructure, cybersecurity, jakarta indonesia"
 logo: /assets/img/avatar.jpg
 
 # Social media settings
@@ -24,7 +24,7 @@ social:
 author:
   name: Dimas Tri Sasongko # author name
   bio: >- # tell to the world
-    A Cloud Engineer with over three years of experience, who is adept in utilizing the Linux operating system and proficiently implements Cloud Computing using AWS, Digital Ocean & Linode.
+    AWS Cloud Engineer with 3+ years of experience specializing in cloud infrastructure and cybersecurity. Expert in AWS services, CrowdStrike security solutions, Linux administration, and DevOps practices.
   username: maginati0n # general username
   github: maginati0n # github username
   twitter: dimastrisngko # twitter username

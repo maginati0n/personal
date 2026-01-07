@@ -1,9 +1,10 @@
 ---
 layout: page
 title: "Experience"
-description: "Professional experience in cloud engineering, DevOps, and scalable infrastructure solutions."
+description: "Professional experience of Dimas Tri Sasongko as AWS Cloud Engineer. 3+ years working with AWS services, cloud infrastructure, and enterprise solutions in Indonesia."
 permalink: /experience/
 image: /assets/img/avatar.jpg
+keywords: "Dimas Tri Sasongko experience, AWS Cloud Engineer career, Cloud Engineer Indonesia, AWS professional, cloud infrastructure experience, Linux administrator"
 ---
 
 <script type="application/ld+json">
@@ -13,7 +14,7 @@ image: /assets/img/avatar.jpg
   "name": "Dimas Tri Sasongko",
   "url": "https://ditrisa.my.id/experience/",
   "image": "https://ditrisa.my.id/assets/img/avatar.jpg",
-  "jobTitle": "Cloud Engineer",
+  "jobTitle": "AWS Cloud Engineer",
   "worksFor": {
     "@type": "Organization",
     "name": "Westcon-Comstor Indonesia"
@@ -25,7 +26,7 @@ image: /assets/img/avatar.jpg
 }
 </script>
 
-*Building scalable cloud solutions and supporting enterprise customers throughout my career journey.*
+*Building scalable AWS cloud solutions and implementing cloud infrastructure throughout my career journey.*
 
 ## 💼 Experience Timeline
 
@@ -36,12 +37,14 @@ image: /assets/img/avatar.jpg
     <div class="timeline-marker"></div>
     <div class="timeline-content">
       <div class="timeline-date">Jul 2025 – Present</div>
-      <h3>Cloud Engineer</h3>
+      <h3>AWS Cloud Engineer</h3>
       <p><strong>Westcon-Comstor Indonesia</strong> · Full-time</p>
       <p>📍 Jakarta, Indonesia · On-site</p>
       <ul>
-        <li>Working on AWS cloud infrastructure solutions for enterprise customers.</li>
-        <li>Supporting deployment, migration, and optimization of workloads on AWS.</li>
+        <li>Designing and implementing AWS cloud infrastructure solutions for enterprise customers.</li>
+        <li>Managing AWS services including EC2, S3, RDS, Lambda, VPC, and CloudFormation.</li>
+        <li>Implementing CrowdStrike security solutions for endpoint protection and threat detection.</li>
+        <li>Supporting cloud migration projects and optimizing AWS costs using Well-Architected principles.</li>
         <li>Collaborating with cross-functional teams to design scalable and secure cloud architectures.</li>
       </ul>
     </div>
@@ -57,9 +60,9 @@ image: /assets/img/avatar.jpg
       <p>📍 Bandung, West Java, Indonesia · Hybrid</p>
       <ul>
         <li>Built and managed secure, production-ready environments on AWS (CloudFront, EC2, ECS, S3, RDS, Load Balancer, IAM, CloudWatch).</li>
-        <li>Worked with Azure (AKS, VMs, Blob Storage, Azure Monitor).</li>
-        <li>Automated infrastructure deployments with Terraform.</li>
-        <li>Improved CI/CD pipelines for faster and more reliable releases.</li>
+        <li>Automated AWS infrastructure deployments with Terraform and CloudFormation.</li>
+        <li>Improved CI/CD pipelines using AWS CodePipeline and CodeBuild for faster and more reliable releases.</li>
+        <li>Configured AWS security best practices including VPC security groups, IAM policies, and CloudTrail logging.</li>
       </ul>
     </div>
   </div>

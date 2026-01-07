@@ -1,12 +1,18 @@
 ---
-title: Tags
+title: "Technical Tags - Browse Posts by Topic | Dimas Tri Sasongko"
 permalink: /tags/
 layout: page
-excerpt: Sorted article by tags.
+excerpt: "Browse technical articles organized by tags. Find posts about AWS, CrowdStrike, cloud security, cybersecurity, Linux, and more cloud technologies."
+description: "Explore technical blog posts organized by tags and topics. Find articles about AWS services, CrowdStrike security solutions, cloud architecture, cybersecurity practices, and Linux administration."
+keywords: "technical tags, AWS posts, CrowdStrike articles, cloud security topics, cybersecurity tutorials, Linux guides, AWS cloud engineer content"
 ---
 
+# Browse Posts by Tags
+
+*Explore technical articles organized by topics and technologies. Find exactly what you're looking for.*
+
 <div class="archive-tags">
-  <a class="tag-item" href="#">all</a>
+  <a class="tag-item" href="#" onclick="showAll()">all posts</a>
   {%- for tag in site.tags -%} 
     {% capture name %}{{ tag | first }}{% endcapture %}
     <a class="tag-item" href="#{{name}}">{{ name }}</a> 
@@ -15,7 +21,7 @@ excerpt: Sorted article by tags.
 
 {%- for tag in site.tags -%}
   {%- capture name -%}{{ tag | first }}{%- endcapture -%}
-  <h2 id="{{ name }}">{{ name | upcase }}</h2>
+  <h2 id="{{ name }}">{{ name | upcase }} ({{ site.tags[name] | size }} posts)</h2>
   {%- for post in site.tags[name] -%}
     <article class="post-item" id="results-container">
       <span class="post-item-date">{{ post.date | date: "%b %d, %Y" }}</span>
@@ -25,3 +31,10 @@ excerpt: Sorted article by tags.
     </article>
   {%- endfor -%}
 {%- endfor -%}
+
+<script>
+function showAll() {
+  // Scroll to top and show all content
+  window.scrollTo(0, 0);
+}
+</script>
