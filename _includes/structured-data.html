@@ -1,0 +1,62 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "{{ site.author.name }}",
+  "url": "{{ site.url }}",
+  "image": "{{ site.url }}{{ site.author.avatar }}",
+  "sameAs": [
+    "https://github.com/{{ site.author.github }}",
+    "https://twitter.com/{{ site.author.twitter }}",
+    "https://www.facebook.com/{{ site.author.facebook }}"
+  ],
+  "jobTitle": "Cloud Engineer",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Cloud Infrastructure"
+  },
+  "knowsAbout": [
+    "AWS",
+    "Digital Ocean", 
+    "Linode",
+    "Linux",
+    "DevOps",
+    "Docker",
+    "Cloud Computing",
+    "Web Technology"
+  ],
+  "description": "{{ site.author.bio | strip_html | strip_newlines }}"
+}
+</script>
+
+{% if page.layout == 'post' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "{{ page.title }}",
+  "description": "{{ page.description | default: page.excerpt | strip_html | strip_newlines | truncate: 160 }}",
+  "image": "{{ site.url }}{% if page.image %}{{ page.image }}{% else %}{{ site.image }}{% endif %}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ site.author.name }}",
+    "url": "{{ site.url }}"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "{{ site.author.name }}",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ site.url }}{{ site.author.avatar }}"
+    }
+  },
+  "datePublished": "{{ page.date | date_to_xmlschema }}",
+  "dateModified": "{% if page.modified %}{{ page.modified | date_to_xmlschema }}{% else %}{{ page.date | date_to_xmlschema }}{% endif %}",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ site.url }}{{ page.url }}"
+  },
+  "keywords": "{% if page.tags %}{{ page.tags | join: ', ' }}{% endif %}"
+}
+</script>
+{% endif %}

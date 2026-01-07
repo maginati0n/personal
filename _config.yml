@@ -1,12 +1,24 @@
 # Site settings
-title: Hello There! # site title
+title: "Dimas Tri Sasongko - Cloud Engineer & DevOps Expert" # SEO-optimized title
 description: >- # site description
-  Im writing in Bahasa about web technology and experience as a journal 
-  for documentation things that he learned, meet him <a href="https://github.com/maginati0n" target="_blank" rel="noopener">@github</a>.
+  Cloud Engineer with 3+ years experience in AWS, Digital Ocean & Linode. Expert in Linux, DevOps, Docker, and cloud infrastructure. Technical blog about web technology, cloud computing, and DevOps best practices.
 lang: en-US # default lang
 timezone: Asia/Jakarta # set your timezone
 image: assets/img/ogp.png # This image used for Open Graph more info https://ogp.me/
 mode: dark # default theme "dark" | "light"
+
+# SEO Settings
+tagline: "Cloud Engineer & DevOps Expert"
+keywords: "cloud engineer, aws expert, devops, linux administrator, docker, kubernetes, digital ocean, linode, web technology, cloud computing, infrastructure, jakarta indonesia"
+logo: /assets/img/avatar.jpg
+
+# Social media settings
+social:
+  name: Dimas Tri Sasongko
+  links:
+    - https://twitter.com/dimastrisngko
+    - https://github.com/maginati0n
+    - https://www.facebook.com/dimarshall404
 
 # Profile settings
 author:
@@ -65,6 +77,15 @@ number_of_posts: 5
 sass:
   style: compressed
 
+# Sitemap settings
+sitemap:
+  file: "/sitemap.xml"
+  exclude:
+    - "/404.html"
+    - "/google-site-verification.html"
+  include_posts:
+    - "/index.html"
+
 include:
   - _redirects
   - .htaccess
@@ -85,9 +106,13 @@ exclude:
   - GOOGLE_SEARCH_CONSOLE_SETUP.md
   - SEO_CHECKLIST.md
   - google-site-verification.html
+  - NEW_POST_SEO_WORKFLOW.md
+  - CURRENT_SETUP_STATUS.md
+  - GITHUB_PAGES_SEO_GUIDE.md
 
 # Plugins
 plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-postfiles
+  - jekyll-seo-tag

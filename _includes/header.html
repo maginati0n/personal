@@ -81,8 +81,12 @@
   <meta name="msapplication-TileColor" content="#da532c" />
   <meta name="theme-color" content="#2c2c2c" />
 
+  <!-- Critical CSS -->
+  {% include critical-css.html %}
+  
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}" />
+  <link rel="preload" href="{{ '/assets/css/style.css' | relative_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}"></noscript>
   
   <!-- Google Analytics -->
   {% if site.google_analytics %}
@@ -95,4 +99,7 @@
     gtag('config', '{{ site.google_analytics }}');
   </script>
   {% endif %}
+  
+  <!-- Structured Data -->
+  {% include structured-data.html %}
 </head>

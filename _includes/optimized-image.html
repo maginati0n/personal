@@ -1,0 +1,8 @@
+{% assign image_path = include.src %}
+{% assign alt_text = include.alt | default: "Image" %}
+{% assign webp_path = image_path | replace: '.jpg', '.webp' | replace: '.png', '.webp' %}
+
+<picture>
+  <source srcset="{{ webp_path | relative_url }}" type="image/webp">
+  <img src="{{ image_path | relative_url }}" alt="{{ alt_text }}" loading="lazy" decoding="async">
+</picture>
