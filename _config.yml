@@ -1,5 +1,5 @@
 # Site settings
-title: "Dimas Tri Sasongko - AWS Cloud Engineer & CrowdStrike Expert" # SEO-optimized title
+title: "Dimas Tri Sasongko - AWS Cloud Engineer & DevOps Engineer" # SEO-optimized title
 description: >- # site description
   AWS Cloud Engineer with 3+ years experience specializing in cloud infrastructure and cybersecurity. Expert in AWS services, CrowdStrike security solutions, Linux administration, and DevOps practices. Technical blog about AWS, cloud security, and infrastructure automation.
 lang: en-US # default lang
@@ -8,8 +8,8 @@ image: assets/img/ogp.png # This image used for Open Graph more info https://ogp
 mode: dark # default theme "dark" | "light"
 
 # SEO Settings
-tagline: "AWS Cloud Engineer & CrowdStrike Expert"
-keywords: "aws cloud engineer, crowdstrike expert, aws solutions architect, cloud security, linux administrator, devops engineer, aws infrastructure, cybersecurity, jakarta indonesia"
+tagline: "AWS Cloud Engineer & DevOps Engineer"
+keywords: "aws cloud engineer, crowdstrike, aws solutions architect, cloud security, linux administrator, devops engineer, aws infrastructure, cloud security, jakarta indonesia"
 logo: /assets/img/avatar.jpg
 
 # Social media settings
