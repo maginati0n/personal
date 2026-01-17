@@ -31,8 +31,8 @@ Automatic Related Posts Generator - Smart version that avoids duplication with p
   {% endunless %}
 {% endfor %}
 
-{% comment %} Sort by shared tags and limit to 3 {% endcomment %}
-{% assign sorted_related = related_by_tags | sort_natural | reverse | slice: 0, 3 %}
+{% comment %} Sort by shared tags and limit to 4 {% endcomment %}
+{% assign sorted_related = related_by_tags | sort_natural | reverse | slice: 0, 4 %}
 
 {% if sorted_related.size > 0 %}
 <div class="related-posts">
