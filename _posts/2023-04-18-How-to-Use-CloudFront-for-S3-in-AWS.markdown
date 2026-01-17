@@ -1,7 +1,12 @@
 ---
 layout: post
-title: "How to Use CloudFront for S3 in AWS"
+title: "How to Use CloudFront for S3 in AWS: Complete Setup Guide"
+description: "Learn how to set up Amazon CloudFront CDN with S3 for faster content delivery. Complete tutorial covering S3 bucket configuration, CloudFront distribution setup, and performance optimization."
 date: 2023-04-18
+modified: 2023-04-18
+tags: [aws, cloudfront, s3, cdn, content-delivery, web-performance, aws-s3]
+image: /assets/img/cloudfront-s3-setup.jpg
+author: Dimas Tri Sasongko
 ---
 
 Amazon Web Services (AWS) offers a variety of services to help you manage your website's content. One of these services is Amazon S3, a storage service that allows you to store and retrieve data from anywhere on the web. Another service is Amazon CloudFront, a content delivery network that allows you to distribute your content to users all over the world quickly and securely. In this article, we will explore how to use CloudFront for S3 in AWS.

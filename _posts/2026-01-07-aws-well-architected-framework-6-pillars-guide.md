@@ -203,7 +203,3 @@ Whether you're migrating existing applications to AWS or building new cloud-nati
 5. **Stay Updated**: AWS continuously updates best practices, so keep learning and adapting
 
 The journey to a well-architected system is ongoing, but with these six pillars as your foundation, you're well-equipped to build cloud solutions that stand the test of time.
-
----
-
-*Want to learn more about AWS architecture best practices? Check out my other posts on [AWS CloudFront optimization](/How-to-Use-CloudFront-for-S3-in-AWS/) and [AWS security with WAF](/Getting-Started-with-AWS-WAF/).*

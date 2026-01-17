@@ -1,8 +1,12 @@
 ---
+layout: post
 title: "Getting Started with AWS WAF: Protect Your Web Applications"
+description: "Learn about AWS WAF (Web Application Firewall), its features, benefits, and how to secure your web applications against common threats like SQL injection and XSS attacks."
 date: 2025-09-22
-categories: [AWS, Security, Cloud]
-description: "Learn about AWS WAF (Web Application Firewall), its features, benefits, and how to secure your web applications against common threats."
+modified: 2025-09-22
+tags: [aws, waf, web-security, cloud-security, firewall, aws-security, web-applications]
+image: /assets/img/aws-waf-security.jpg
+author: Dimas Tri Sasongko
 ---
 
 # Getting Started with AWS WAF: Protect Your Web Applications

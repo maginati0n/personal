@@ -1,7 +1,12 @@
 ---
 layout: post
-title: "Building .NET Core 7 with Dockerfile"
+title: "Building .NET Core 7 with Dockerfile: Complete Guide"
+description: "Learn how to containerize .NET Core 7 applications using Docker. Step-by-step guide with Dockerfile examples, best practices, and optimization techniques for production deployments."
 date: 2023-04-10
+modified: 2023-04-10
+tags: [dotnet, docker, dockerfile, containers, dotnet-core, devops, containerization]
+image: /assets/img/dotnet-docker.jpg
+author: Dimas Tri Sasongko
 ---
 In recent years, Docker has become an increasingly popular platform for building, deploying, and running applications. Docker allows developers to package their applications and dependencies into containers, which can be easily deployed to any environment that supports Docker. In this article, we will explore how to build a .NET Core 7 application using Dockerfile.
 

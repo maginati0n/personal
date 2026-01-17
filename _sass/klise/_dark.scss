@@ -201,6 +201,57 @@ body[data-theme="dark"] {
     }
   }
 
+  // Related Posts dark mode
+  .related-posts {
+    border-top-color: $dark-light;
+    
+    h3 {
+      color: $dark-white;
+    }
+    
+    .related-post-item {
+      border-color: rgba(255, 255, 255, 0.2);
+      background-color: rgba(255, 255, 255, 0.02);
+      
+      &:hover {
+        border-color: rgba(255, 255, 255, 0.3);
+        background-color: rgba(255, 255, 255, 0.05);
+      }
+      
+      h4 a {
+        color: $dark-text-base-color;
+        
+        &:hover {
+          color: $dark-white;
+        }
+      }
+      
+      .related-post-excerpt {
+        color: rgba(255, 255, 255, 0.7);
+      }
+      
+      .related-post-meta {
+        color: rgba(255, 255, 255, 0.6);
+        
+        .tag {
+          background-color: rgba(255, 255, 255, 0.15);
+        }
+      }
+    }
+    
+    .related-posts-cta {
+      color: rgba(255, 255, 255, 0.7);
+      
+      a {
+        color: $dark-text-link-blue;
+        
+        &:hover {
+          color: $dark-text-link-blue-active;
+        }
+      }
+    }
+  }
+
   // Post Navigation
   .post-nav {
     border-color: $dark-light;

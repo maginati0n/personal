@@ -1,7 +1,12 @@
 ---
 layout: post
-title: "Using Kaniko To Build And Push Images To ECR AWS From Gitlab Ci"
+title: "Using Kaniko to Build and Push Images to ECR AWS from GitLab CI"
+description: "Complete guide to using Kaniko for building Docker images and pushing to AWS ECR from GitLab CI/CD pipeline. Step-by-step tutorial with configuration examples and best practices."
 date: 2023-04-09
+modified: 2023-04-09
+tags: [kaniko, aws, ecr, gitlab-ci, docker, devops, ci-cd, containers]
+image: /assets/img/kaniko-ecr-gitlab.jpg
+author: Dimas Tri Sasongko
 ---
 
 In this guide, we will walk through the steps of using Kaniko to build and push Docker images to AWS Elastic Container Registry (ECR) from GitLab CI. Kaniko is a tool that allows building Docker images without requiring a Docker daemon, which makes it perfect for building images in a CI/CD pipeline. We will also set up an AWS ECR repository and push the built image to it.
