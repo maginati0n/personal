@@ -98,7 +98,11 @@ exclude:
   - LICENSE
   - CHANGELOG.md
   - README.md
+  - DEPENDENCY_UPDATE_SUMMARY.md
+  - DEPLOYMENT_CHECKLIST.md
+  - JEKYLL_POSTFILES_MIGRATION.md
   - node_modules
+  - vendor
   - CODE_OF_CONDUCT.md
   - CONTRIBUTING.md
   - lighthouse.png

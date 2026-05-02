@@ -1,4 +1,6 @@
 .jekyll-cache_site
 _site
 .vscode
-.github
+.github/guide.md
+vendor/
+.jekyll-cache/
