@@ -5,12 +5,12 @@ description: "Discover why Amazon S3 remains the gold standard for hosting stati
 date: 2026-01-18
 modified: 2026-01-18
 tags: [aws, s3, static-websites, web-hosting, cloud-security, website-deployment, aws-s3]
-image: /assets/img/s3-static-website-hosting.png
+image: /assets/img/posts/2026-01-18-s3-static-websites/s3-static-website-hosting.png
 author: Dimas Tri Sasongko
 ---
 
 # Why S3 is Still the Safest Place for Static Websites (and When It's Not)
-![AWS S3](/assets/img/s3-static-website-hosting.png)
+![AWS S3](/assets/img/posts/2026-01-18-s3-static-websites/s3-static-website-hosting.png)
 When developers debate the best hosting solution for static websites, Amazon S3 consistently emerges as the champion. But in 2026, with countless hosting alternatives flooding the market, is S3 still the safest choice for your static site?
 
 The short answer: absolutely. But like any technology decision, it comes with nuances worth understanding.

@@ -5,7 +5,7 @@ description: "Complete guide to using Kaniko for building Docker images and push
 date: 2023-04-09
 modified: 2023-04-09
 tags: [kaniko, aws, ecr, gitlab-ci, docker, devops, ci-cd, containers]
-image: /assets/img/kaniko-ecr-gitlab.jpg
+image: /assets/img/avatar.jpg
 author: Dimas Tri Sasongko
 ---
 

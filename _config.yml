@@ -83,6 +83,7 @@ sitemap:
   exclude:
     - "/404.html"
     - "/google-site-verification.html"
+    - "/assets/img/posts/"
   include_posts:
     - "/index.html"
 
@@ -103,16 +104,10 @@ exclude:
   - lighthouse.png
   - klise-*.gem
   - klise.gemspec
-  - GOOGLE_SEARCH_CONSOLE_SETUP.md
-  - SEO_CHECKLIST.md
   - google-site-verification.html
-  - NEW_POST_SEO_WORKFLOW.md
-  - CURRENT_SETUP_STATUS.md
-  - GITHUB_PAGES_SEO_GUIDE.md
 
 # Plugins
 plugins:
   - jekyll-feed
   - jekyll-sitemap
-  - jekyll-postfiles
   - jekyll-seo-tag

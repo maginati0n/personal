@@ -5,7 +5,7 @@ description: "Learn about AWS WAF (Web Application Firewall), its features, bene
 date: 2025-09-22
 modified: 2025-09-22
 tags: [aws, waf, web-security, cloud-security, firewall, aws-security, web-applications]
-image: /assets/img/aws-waf-security.jpg
+image: /assets/img/avatar.jpg
 author: Dimas Tri Sasongko
 ---
 

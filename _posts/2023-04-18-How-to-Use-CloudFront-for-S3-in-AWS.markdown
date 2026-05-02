@@ -5,7 +5,7 @@ description: "Learn how to set up Amazon CloudFront CDN with S3 for faster conte
 date: 2023-04-18
 modified: 2023-04-18
 tags: [aws, cloudfront, s3, cdn, content-delivery, web-performance, aws-s3]
-image: /assets/img/cloudfront-s3-setup.jpg
+image: /assets/img/avatar.jpg
 author: Dimas Tri Sasongko
 ---
 

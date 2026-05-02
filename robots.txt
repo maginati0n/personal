@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
 
+Disallow: /assets/img/posts/
+
 Sitemap: https://ditrisa.my.id/sitemap.xml

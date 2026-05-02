@@ -18,11 +18,18 @@ gem "github-pages", group: :jekyll_plugins
 
 # If you have any plugins, put them here!
 group :jekyll_plugins do
-  gem 'jekyll-feed', '~> 0.13'
+  gem 'jekyll-feed', '~> 0.17'
   gem 'jekyll-sitemap', '~> 1.4'
   gem 'jekyll-compose', '~> 0.12.0'
-  gem 'jekyll-postfiles', '~> 3.1'
 end
+
+# Security updates
+gem 'nokogiri', '>= 1.19.3'
+gem 'addressable', '>= 2.8.8'
+gem 'rexml', '>= 3.4.4'
+
+# Optional: Suppress Faraday warning
+gem 'faraday-retry'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 # gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
