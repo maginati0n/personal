@@ -11,7 +11,6 @@ permissions:
   pages: write
   id-token: write
 
-# Only one concurrent deployment at a time
 concurrency:
   group: "pages"
   cancel-in-progress: false
@@ -36,7 +35,7 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.3'
-          bundler-cache: true # Enabled caching for faster builds
+          bundler-cache: true
 
       - name: Install Ruby dependencies
         run: |
@@ -48,8 +47,9 @@ jobs:
         uses: actions/configure-pages@v5
 
       - name: Build with Jekyll
-        # Removed --safe to allow the jekyll-postcss plugin to run
-        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+        # Using bash explicitly and simplifying the build command to avoid shell injection/syntax issues
+        shell: bash
+        run: bundle exec jekyll build
         env:
           JEKYLL_ENV: production
 
