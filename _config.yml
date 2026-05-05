@@ -109,14 +109,12 @@ exclude:
   - klise-*.gem
   - klise.gemspec
   - google-site-verification.html
+  - assets/css/source.css
 
 # Plugins
 plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
-  - jekyll-postcss
 
-# PostCSS (Tailwind CSS)
-postcss:
-  cache: false
+
