@@ -1,66 +1,59 @@
 ---
 layout: compress
 ---
-
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
-
 {% include header.html %}
 
-<body data-theme="{{ site.mode }}" class="notransition">
+<body data-theme="{{ site.mode }}" class="notransition font-sans antialiased">
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5XNRRZNM"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
 
   <script>
     const body = document.body;
     const data = body.getAttribute("data-theme");
-
     const initTheme = (state) => {
-      if (state === "dark") {
-        body.setAttribute("data-theme", "dark");
-      } else if (state === "light") {
-        body.removeAttribute("data-theme");
-      } else {
-        localStorage.setItem("theme", data);
-      }
+      if (state === "dark") { body.setAttribute("data-theme", "dark"); }
+      else if (state === "light") { body.removeAttribute("data-theme"); }
+      else { localStorage.setItem("theme", data); }
     };
- 
     initTheme(localStorage.getItem("theme"));
-    
     setTimeout(() => body.classList.remove("notransition"), 75);
   </script>
+
+  <!-- Ambient Background Orbs -->
+  <div class="bg-orb w-72 h-72 bg-accent/25 dark:bg-accent-dark/15 top-20 -left-36 animate-float"></div>
+  <div class="bg-orb w-96 h-96 bg-amber-400/15 dark:bg-amber-500/10 top-1/3 -right-48 animate-float-slow"></div>
 
   {% include navbar.html %}
   <div class="wrapper post">
     <main class="page-content" aria-label="Content">
       <article itemscope itemtype="https://schema.org/BlogPosting">
 
-        <header class="header">
+        <header class="mt-20 md:mt-28 mb-10 animate-fade-in">
           {% if page.tags and page.tags != empty %}
-          <div class="tags">
-            {% assign tags = page.tags %}
-            <span itemprop="keywords">
-              {% for tag in tags %}
-              <a class="tag"
-                href="/tags/#{{tag | downcase | slugify}}">{{tag | upcase }}</a>{% unless forloop.last %},{% endunless %}
+          <div class="mb-2 ml-1 tracking-wider">
+            <span itemprop="keywords" class="flex flex-wrap gap-1.5">
+              {% for tag in page.tags %}
+              <a class="text-xs font-bold no-underline px-2 py-0.5 rounded-full
+                        bg-accent/10 dark:bg-accent-dark/10 text-accent dark:text-accent-dark
+                        hover:bg-accent/20 dark:hover:bg-accent-dark/20 transition-colors duration-200"
+                 href="/tags/#{{tag | downcase | slugify}}">{{tag | upcase }}</a>{% unless forloop.last %}{% endunless %}
               {% endfor %}
             </span>
           </div>
           {% endif %}
-          <h1 class="header-title" itemprop="headline">{{ page.title | escape }}</h1>
+          <h1 class="text-3xl md:text-[2em] leading-tight mt-2 mb-5 text-slate-900 dark:text-slate-100" itemprop="headline">{{ page.title | escape }}</h1>
           {% if page.date %}
-          <div class="post-meta">
-            <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+          <div class="pt-1 leading-snug text-slate-500 dark:text-slate-400 text-sm flex items-center gap-4">
+            <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished" class="relative after:absolute after:bg-slate-300 dark:after:bg-slate-600 after:bottom-[2px] after:right-[-14px] after:w-3 after:h-0.5">
               {{ page.date | date: "%b %d, %Y" }}
             </time>
             <span itemprop="author" itemscope itemtype="https://schema.org/Person">
-              <span itemprop="name">{{ site.author.name }}</span>
+              <span itemprop="name" class="border-b border-dotted border-slate-300 dark:border-slate-600">{{ site.author.name }}</span>
             </span>
-            <time hidden datetime="{{ page.modified | date_to_xmlschema }}" itemprop="dateModified">
-              {{ page.date | date: "%b %d, %Y" }}
-            </time>
+            <time hidden datetime="{{ page.modified | date_to_xmlschema }}" itemprop="dateModified">{{ page.date | date: "%b %d, %Y" }}</time>
             <span hidden itemprop="publisher" itemtype="Person">{{ site.author.name }}</span>
             <span hidden itemprop="image">{{ page.image }}</span>
             <span hidden itemprop="mainEntityOfPage">{{ page.excerpt }}</span>
@@ -69,7 +62,7 @@ layout: compress
         </header>
 
         <div class="page-content" itemprop="articleBody">
-          {% include anchor_headings.html html=content anchorClass="anchor-head" beforeHeading=true h_min=1 h_max=4 %}
+          {% include anchor_headings.html html=content anchorClass="anchor-head" beforeHeading=false h_min=1 h_max=4 %}
           {% if page.tweet %}
           <p>Comments this article on 
             <a href="https://twitter.com/{{site.twitter}}/status/{{page.tweet}}">Twitter</a>.
@@ -88,7 +81,7 @@ layout: compress
     </main>
 
     {% if page.modified %}
-      <small class="post-updated-at">updated_at {{page.modified | date: "%d-%m-%Y"}}</small>
+      <small class="post-updated-at text-xs text-slate-400">updated_at {{page.modified | date: "%d-%m-%Y"}}</small>
     {% endif %}
     {% if page.next or page.previous %}
       {% include navigation.html %}
@@ -97,5 +90,4 @@ layout: compress
     {% include footer.html %}
   </div>
 </body>
-
 </html>

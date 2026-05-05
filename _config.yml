@@ -115,3 +115,8 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
+  - jekyll-postcss
+
+# PostCSS (Tailwind CSS)
+postcss:
+  cache: false

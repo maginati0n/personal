@@ -1,6 +1,21 @@
-.jekyll-cache_site
-_site
-.vscode
-.github/guide.md
-vendor/
+# Jekyll
+_site/
 .jekyll-cache/
+.jekyll-metadata
+
+# Node
+node_modules/
+package-lock.json
+npm-debug.log*
+
+# OS/IDE
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Misc
+vendor/
+_sass_backup/
+.github/guide.md

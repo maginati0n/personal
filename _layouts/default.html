@@ -2,19 +2,17 @@
 layout: compress
 ---
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: " en " }}">
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
 {% include header.html %}
 
-<body data-theme="{{ site.mode }}" class="notransition">
+<body data-theme="{{ site.mode }}" class="notransition font-sans antialiased">
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5XNRRZNM"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
 
   <script>
     const body = document.body;
     const data = body.getAttribute("data-theme");
-
     const initTheme = (state) => {
       if (state === "dark") {
         body.setAttribute("data-theme", "dark");
@@ -24,14 +22,17 @@ layout: compress
         localStorage.setItem("theme", data);
       }
     };
- 
     initTheme(localStorage.getItem("theme"));
-    
     setTimeout(() => body.classList.remove("notransition"), 75);
   </script>
 
+  <!-- Ambient Background Orbs -->
+  <div class="bg-orb w-72 h-72 bg-accent/25 dark:bg-accent-dark/15 top-20 -left-36 animate-float"></div>
+  <div class="bg-orb w-96 h-96 bg-amber-400/15 dark:bg-amber-500/10 top-1/3 -right-48 animate-float-slow"></div>
+  <div class="bg-orb w-64 h-64 bg-orange-300/15 dark:bg-orange-400/10 bottom-20 left-1/4 animate-float" style="animation-delay: 2s;"></div>
+
   {% include navbar.html %}
-  <div class="wrapper">
+  <div class="wrapper {% if page.home %}wrapper-wide{% endif %}">
     {% include author.html %}
     <main aria-label="Content">
       {{ content }}

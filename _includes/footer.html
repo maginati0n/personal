@@ -1,36 +1,23 @@
-<footer class="footer">
-  <a class="footer_item" href="{{ '/thanks' | relative_url }}">ack.</a>
-  <a class="footer_item" href="javascript::void(0)">resume</a>
-  <a class="footer_item" href="{{ '/feed.xml' | relative_url }}">rss</a>
-  <span class="footer_item">&copy; {{ site.time | date: "%Y" }}</span>
-  <small class="footer_copyright">
-    <!-- Klisé Theme: https://github.com/piharpi/jekyll-klise -->
-    <a
-      href="https://github.com/piharpi/jekyll-klise"
-      target="_blank"
-      rel="noreferrer noopener"
-      >klisé</a
-    >
+<footer class="mt-20 mb-8 text-center md:mt-24">
+  <div class="flex items-center justify-center gap-3 flex-wrap">
+    <a class="text-slate-700 dark:text-slate-300 text-sm font-bold opacity-80 hover:opacity-100 no-underline transition-opacity" href="{{ '/thanks' | relative_url }}">ack.</a>
+    <a class="text-slate-700 dark:text-slate-300 text-sm font-bold opacity-80 hover:opacity-100 no-underline transition-opacity" href="javascript::void(0)">resume</a>
+    <a class="text-slate-700 dark:text-slate-300 text-sm font-bold opacity-80 hover:opacity-100 no-underline transition-opacity" href="{{ '/feed.xml' | relative_url }}">rss</a>
+    <span class="text-slate-700 dark:text-slate-300 text-sm font-bold opacity-80">&copy; {{ site.time | date: "%Y" }}</span>
+  </div>
+  <small class="block mt-1.5 text-xs text-slate-400 dark:text-slate-500 opacity-80">
+    <a href="https://github.com/piharpi/jekyll-klise" target="_blank" rel="noreferrer noopener" class="hover:text-accent dark:hover:text-accent-dark">klisé</a>
     theme on
-    <a href="https://jekyllrb.com" target="_blank" rel="noreferrer noopener"
-      >jekyll</a
-    >
+    <a href="https://jekyllrb.com" target="_blank" rel="noreferrer noopener" class="hover:text-accent dark:hover:text-accent-dark">jekyll</a>
   </small>
 </footer>
 <script src="{{ '/assets/js/main.js' | relative_url }}" defer="defer"></script>
 {%- if site.google_analytics -%}
-  <!-- Google tag (gtag.js) -->
-  <script
-  async
-  src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"
-  ></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
+    function gtag() { dataLayer.push(arguments); }
     gtag("js", new Date());
-
     gtag("config", "{{ site.google_analytics }}");
   </script>
 {%- endif -%}
@@ -41,6 +28,8 @@
       searchInput: document.getElementById('search-input'),
       resultsContainer: document.getElementById('search-results'),
       json: '{{ "/assets/search.json" | relative_url }}',
+      searchResultTemplate: '<li><a href="{url}" class="archive-post-item"><span class="archive-post-item-date">{date}</span><span class="archive-post-item-title">{title}</span></a></li>',
+      dateFormat: '%b %d, %Y'
     });
   </script>
 {%- endif -%}

@@ -12,29 +12,70 @@ keywords: "technical tags, AWS posts, CrowdStrike articles, cloud security topic
 *Explore technical articles organized by topics and technologies. Find exactly what you're looking for.*
 
 <div class="archive-tags">
-  <a class="tag-item" href="#" onclick="showAll()">all posts</a>
-  {%- for tag in site.tags -%} 
+  <a class="tag-item active" href="javascript:void(0)" onclick="filterTag('all', this)">all posts</a>
+  {%- assign sorted_tags = site.tags | sort -%}
+  {%- for tag in sorted_tags -%} 
     {% capture name %}{{ tag | first }}{% endcapture %}
-    <a class="tag-item" href="#{{name}}">{{ name }}</a> 
+    <a class="tag-item" href="javascript:void(0)" onclick="filterTag('{{ name }}', this)">{{ name }}</a> 
   {%- endfor -%}
 </div>
 
-{%- for tag in site.tags -%}
-  {%- capture name -%}{{ tag | first }}{%- endcapture -%}
-  <h2 id="{{ name }}">{{ name | upcase }} ({{ site.tags[name] | size }} posts)</h2>
-  {%- for post in site.tags[name] -%}
-    <article class="post-item" id="results-container">
-      <span class="post-item-date">{{ post.date | date: "%b %d, %Y" }}</span>
-      <h3 class="post-item-title">
-        <a href="{{ post.url }}">{{ post.title | escape }}</a>
-      </h3> 
-    </article>
+<div id="tags-content">
+  {%- for tag in site.tags -%}
+    {%- capture name -%}{{ tag | first }}{%- endcapture -%}
+    <section id="tag-group-{{ name }}" class="tag-group mb-12 animate-fade-in">
+      <h2 class="tag-group-title">{{ name | upcase }} <span class="ml-2 opacity-50 font-normal text-sm">({{ site.tags[name] | size }} posts)</span></h2>
+      <div class="grid grid-cols-1 gap-4">
+        {%- for post in site.tags[name] -%}
+          <article class="tag-post-item">
+            <span class="tag-post-item-date">{{ post.date | date: "%b %d, %Y" }}</span>
+            <h3 class="tag-post-item-title">
+              <a href="{{ post.url }}">{{ post.title | escape }}</a>
+            </h3> 
+          </article>
+        {%- endfor -%}
+      </div>
+    </section>
   {%- endfor -%}
-{%- endfor -%}
+</div>
 
 <script>
-function showAll() {
-  // Scroll to top and show all content
-  window.scrollTo(0, 0);
+function filterTag(tag, el) {
+  // Update active state in tag cloud
+  document.querySelectorAll('.tag-item').forEach(item => {
+    item.classList.remove('active', 'bg-accent/20', 'text-accent', 'border-accent/40');
+  });
+  el.classList.add('active', 'bg-accent/20', 'text-accent', 'border-accent/40');
+
+  // Filter content
+  const sections = document.querySelectorAll('.tag-group');
+  if (tag === 'all') {
+    sections.forEach(s => s.style.display = 'block');
+  } else {
+    sections.forEach(s => {
+      if (s.id === 'tag-group-' + tag) {
+        s.style.display = 'block';
+      } else {
+        s.style.display = 'none';
+      }
+    });
+  }
+  
+  // Smooth scroll to content
+  if (tag !== 'all') {
+    const target = document.getElementById('tag-group-' + tag);
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
 }
+
+// Check for hash on load
+window.addEventListener('DOMContentLoaded', () => {
+  const hash = window.location.hash.substring(1);
+  if (hash) {
+    const tagLink = Array.from(document.querySelectorAll('.tag-item')).find(a => a.textContent.trim() === hash);
+    if (tagLink) filterTag(hash, tagLink);
+  }
+});
 </script>

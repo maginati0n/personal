@@ -3,12 +3,28 @@ layout: default
 home: true
 ---
 
-<h2 class="posts-item-note" aria-label="Recent Posts">Recent Technical Posts</h2>
+<h2 class="text-[0.65rem] font-bold uppercase tracking-[0.2em] text-slate-400 dark:text-slate-500 mb-6 mt-8" aria-label="Recent Posts">Recent Technical Posts</h2>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 {%- for post in site.posts limit: site.number_of_posts -%}
-<article class="post-item">
-  <span class="post-item-date">{{ post.date | date: "%b %d, %Y" }}</span>
-  <h3 class="post-item-title">
-    <a href="{{ post.url }}">{{ post.title | escape }}</a>
+<article class="glass-card group flex flex-col p-6 h-full" style="animation: fadeInUp 0.4s ease-out {{ forloop.index | times: 0.1 }}s both;">
+  <div class="flex justify-between items-start mb-4">
+    <span class="text-[0.65rem] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider tabular-nums">{{ post.date | date: "%b %d, %Y" }}</span>
+    {% if post.tags.size > 0 %}
+    <span class="px-2 py-0.5 rounded-md bg-accent/10 text-accent text-[0.6rem] font-bold uppercase">{{ post.tags[0] }}</span>
+    {% endif %}
+  </div>
+  
+  <h3 class="m-0 p-0 text-lg font-bold border-none leading-tight mb-4 flex-1">
+    <a href="{{ post.url }}" class="text-slate-800 dark:text-slate-200 no-underline group-hover:text-accent dark:group-hover:text-accent-dark transition-colors duration-200">
+      {{ post.title | escape }}
+    </a>
   </h3>
+
+  <div class="flex items-center text-xs font-semibold text-accent/80 group-hover:text-accent transition-colors duration-200">
+    Read Article 
+    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1 group-hover:translate-x-1 transition-transform duration-200"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12,5 19,12 12,19"></polyline></svg>
+  </div>
 </article>
 {%- endfor -%}
+</div>
