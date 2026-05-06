@@ -1,7 +1,7 @@
 # Site settings
 title: "Dimas Tri Sasongko - AWS Cloud Engineer & DevOps Engineer" # SEO-optimized title
 description: >- # site description
-  AWS Cloud Engineer with 3+ years experience specializing in cloud infrastructure and cybersecurity. Expert in AWS services, CrowdStrike security solutions, Linux administration, and DevOps practices. Technical blog about AWS, cloud security, and infrastructure automation.
+  AWS Cloud Engineer & DevOps professional specializing in scalable infrastructure, cloud security, and automation. Expert technical insights from Jakarta, Indonesia.
 lang: en-US # default lang
 timezone: Asia/Jakarta # set your timezone
 image: /assets/img/ogp.png # This image used for Open Graph more info https://ogp.me/

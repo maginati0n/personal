@@ -5,7 +5,7 @@ layout: page
 wide_layout: true
 excerpt: "Learn about Dimas Tri Sasongko, an AWS Cloud Engineer with 3+ years experience in AWS services and growing knowledge in cloud security. Based in Bandung, Indonesia, specializing in cloud computing, DevOps, and Linux administration."
 comments: false
-description: "Professional AWS Cloud Engineer and cloud enthusiast based in Bandung, Indonesia. 3+ years experience with AWS services, learning cloud security concepts, Linux systems, Docker, and cloud infrastructure management."
+description: "AWS Cloud Engineer and enthusiast based in Indonesia. 3+ years experience in AWS services, cloud security, Docker, and infrastructure management."
 keywords: "Dimas Tri Sasongko, AWS Cloud Engineer, Cloud Enthusiast, AWS Solutions Architect, Cloud Computing, Linux Administrator, Bandung Indonesia, System Administrator, AWS Infrastructure"
 image: /assets/img/ogp.png
 ---
