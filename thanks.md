@@ -2,7 +2,9 @@
 layout: page
 title: "Acknowledgments"
 permalink: /thanks/
-description: "Special thanks to the tools, technologies, and people that made this portfolio possible."
+description: "Special thanks to the tools, technologies, and people that made this portfolio possible. Built with Jekyll, Tailwind CSS, and the Klisé theme."
+keywords: "acknowledgments, open source credits, Jekyll theme, Tailwind CSS, portfolio credits"
+image: /assets/img/ogp.png
 ---
 
 <div class="reveal-on-scroll">

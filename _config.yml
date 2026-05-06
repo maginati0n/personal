@@ -4,13 +4,17 @@ description: >- # site description
   AWS Cloud Engineer with 3+ years experience specializing in cloud infrastructure and cybersecurity. Expert in AWS services, CrowdStrike security solutions, Linux administration, and DevOps practices. Technical blog about AWS, cloud security, and infrastructure automation.
 lang: en-US # default lang
 timezone: Asia/Jakarta # set your timezone
-image: assets/img/ogp.png # This image used for Open Graph more info https://ogp.me/
+image: /assets/img/ogp.png # This image used for Open Graph more info https://ogp.me/
 mode: dark # default theme "dark" | "light"
 
 # SEO Settings
 tagline: "AWS Cloud Engineer & DevOps Engineer"
 keywords: "aws cloud engineer, crowdstrike, aws solutions architect, cloud security, linux administrator, devops engineer, aws infrastructure, cloud security, jakarta indonesia"
 logo: /assets/img/avatar.jpg
+
+# Google Search Console — ownership already verified via existing method.
+# If you ever need HTML tag verification, uncomment and add your code:
+# google_site_verification: "YOUR_CODE_HERE"
 
 # Social media settings
 social:
@@ -19,6 +23,7 @@ social:
     - https://twitter.com/dimastrisngko
     - https://github.com/maginati0n
     - https://www.facebook.com/dimarshall404
+    - https://linkedin.com/in/dimastrisasongko
 
 # Profile settings
 author:

@@ -3,7 +3,9 @@ layout: page
 title: "Professional Resume"
 permalink: /resume/
 wide_layout: true
-description: "View and download the professional resume of Dimas Tri Sasongko, AWS Cloud Engineer."
+description: "View and download the professional resume of Dimas Tri Sasongko, AWS Cloud Engineer with 3+ years of experience in cloud infrastructure, DevOps, and security."
+keywords: "Dimas Tri Sasongko resume, AWS Cloud Engineer CV, cloud engineer resume, DevOps engineer resume, download resume"
+image: /assets/img/ogp.png
 ---
 
 <div class="flex flex-col items-center justify-center min-h-[50vh] text-center reveal-on-scroll">

@@ -6,6 +6,10 @@ layout: compress
 {% include header.html %}
 
 <body data-theme="{{ site.mode }}" class="notransition font-sans antialiased">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5XNRRZNM"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
   <script>
     const body = document.body;
     const data = body.getAttribute("data-theme");
@@ -27,10 +31,11 @@ layout: compress
     <header class="mt-20 md:mt-28 mb-10 animate-fade-in">
       <h1 class="text-3xl md:text-[2em] leading-tight text-center text-slate-900 dark:text-slate-100" itemprop="headline">{{ page.title | escape }}.</h1>
     </header>
-    <main class="page-content" aria-label="Content">
+    <main class="page-content" aria-label="Content" itemscope itemtype="https://schema.org/WebPage">
       {% include anchor_headings.html html=content anchorClass="anchor-head" beforeHeading=true h_min=4 h_max=4 %}
     </main>
     {% include footer.html %}
   </div>
 </body>
 </html>
+

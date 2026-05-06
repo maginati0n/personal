@@ -8,7 +8,8 @@
   "sameAs": [
     "https://github.com/{{ site.author.github }}",
     "https://twitter.com/{{ site.author.twitter }}",
-    "https://www.facebook.com/{{ site.author.facebook }}"
+    "https://www.facebook.com/{{ site.author.facebook }}",
+    "https://linkedin.com/in/dimastrisasongko"
   ],
   "jobTitle": "AWS Cloud Engineer",
   "worksFor": {
@@ -28,6 +29,53 @@
   "description": "{{ site.author.bio | strip_html | strip_newlines }}"
 }
 </script>
+
+<!-- WebSite Schema - Enables Google Sitelinks Searchbox -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "{{ site.title }}",
+  "url": "{{ site.url }}",
+  "description": "{{ site.description | strip_html | strip_newlines | truncate: 160 }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ site.author.name }}"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "{{ site.url }}/archive/?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+<!-- BreadcrumbList Schema - Helps Google understand site structure -->
+{% unless page.url == "/" %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "{{ site.url }}"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "{{ page.title | escape }}",
+      "item": "{{ site.url }}{{ page.url }}"
+    }
+  ]
+}
+</script>
+{% endunless %}
 
 {% if page.layout == 'post' %}
 <script type="application/ld+json">

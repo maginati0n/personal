@@ -1,19 +1,21 @@
 {
-    "name": "",
-    "short_name": "",
+    "name": "Dimas Tri Sasongko - AWS Cloud Engineer",
+    "short_name": "ditrisa",
+    "description": "Personal website and technical blog of Dimas Tri Sasongko, AWS Cloud Engineer.",
+    "start_url": "/",
     "icons": [
         {
-            "src": "/android-chrome-192x192.png",
+            "src": "/assets/favicons/android-chrome-192x192.png",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "/android-chrome-384x384.png",
+            "src": "/assets/favicons/android-chrome-384x384.png",
             "sizes": "384x384",
             "type": "image/png"
         }
     ],
-    "theme_color": "#ffffff",
-    "background_color": "#ffffff",
+    "theme_color": "#0b0f19",
+    "background_color": "#0b0f19",
     "display": "standalone"
 }

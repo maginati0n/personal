@@ -4,6 +4,8 @@ title: "Project Portfolio"
 permalink: /portfolio/
 wide_layout: true
 description: "Explore the cloud architecture and security projects by Dimas Tri Sasongko. AWS migrations, serverless solutions, and security automation."
+keywords: "AWS projects, cloud architecture portfolio, serverless solutions, security automation, Terraform infrastructure, AWS migration, Dimas Tri Sasongko portfolio"
+image: /assets/img/ogp.png
 ---
 
 <div class="reveal-on-scroll">
