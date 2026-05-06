@@ -7,7 +7,7 @@ home: true
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 {%- for post in site.posts limit: site.number_of_posts -%}
-<article class="glass-card group flex flex-col p-6 h-full" style="animation: fadeInUp 0.4s ease-out {{ forloop.index | times: 0.1 }}s both;">
+<article class="glass-card group flex flex-col p-6 h-full reveal-on-scroll" style="transition-delay: {{ forloop.index | times: 50 | plus: 50 }}ms;">
   <div class="flex justify-between items-start mb-4">
     <span class="text-[0.65rem] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider tabular-nums">{{ post.date | date: "%b %d, %Y" }}</span>
     {% if post.tags.size > 0 %}

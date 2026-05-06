@@ -1,15 +1,17 @@
-<footer class="mt-20 mb-8 text-center md:mt-24">
-  <div class="flex items-center justify-center gap-3 flex-wrap">
-    <a class="text-slate-700 dark:text-slate-300 text-sm font-bold opacity-80 hover:opacity-100 no-underline transition-opacity" href="{{ '/thanks' | relative_url }}">ack.</a>
-    <a class="text-slate-700 dark:text-slate-300 text-sm font-bold opacity-80 hover:opacity-100 no-underline transition-opacity" href="javascript::void(0)">resume</a>
-    <a class="text-slate-700 dark:text-slate-300 text-sm font-bold opacity-80 hover:opacity-100 no-underline transition-opacity" href="{{ '/feed.xml' | relative_url }}">rss</a>
-    <span class="text-slate-700 dark:text-slate-300 text-sm font-bold opacity-80">&copy; {{ site.time | date: "%Y" }}</span>
+<footer class="mt-20 mb-8 md:mt-24 flex justify-center">
+  <div class="glass-subtle py-4 px-8 rounded-2xl flex flex-col items-center gap-2 max-w-lg w-full text-center">
+    <div class="flex items-center justify-center gap-4 flex-wrap">
+      <a class="text-slate-700 dark:text-slate-300 text-sm font-bold opacity-80 hover:text-accent dark:hover:text-accent-dark hover:opacity-100 no-underline transition-colors" href="{{ '/thanks' | relative_url }}">ack.</a>
+      <a class="text-slate-700 dark:text-slate-300 text-sm font-bold opacity-80 hover:text-accent dark:hover:text-accent-dark hover:opacity-100 no-underline transition-colors" href="{{ '/resume/' | relative_url }}">resume</a>
+      <a class="text-slate-700 dark:text-slate-300 text-sm font-bold opacity-80 hover:text-accent dark:hover:text-accent-dark hover:opacity-100 no-underline transition-colors" href="{{ '/feed.xml' | relative_url }}">rss</a>
+      <span class="text-slate-700 dark:text-slate-300 text-sm font-bold opacity-80">&copy; {{ site.time | date: "%Y" }}</span>
+    </div>
+    <small class="block text-xs text-slate-400 dark:text-slate-500 opacity-80">
+      <a href="https://github.com/piharpi/jekyll-klise" target="_blank" rel="noreferrer noopener" class="hover:text-accent dark:hover:text-accent-dark font-medium transition-colors">klisé</a>
+      theme on
+      <a href="https://jekyllrb.com" target="_blank" rel="noreferrer noopener" class="hover:text-accent dark:hover:text-accent-dark font-medium transition-colors">jekyll</a>
+    </small>
   </div>
-  <small class="block mt-1.5 text-xs text-slate-400 dark:text-slate-500 opacity-80">
-    <a href="https://github.com/piharpi/jekyll-klise" target="_blank" rel="noreferrer noopener" class="hover:text-accent dark:hover:text-accent-dark">klisé</a>
-    theme on
-    <a href="https://jekyllrb.com" target="_blank" rel="noreferrer noopener" class="hover:text-accent dark:hover:text-accent-dark">jekyll</a>
-  </small>
 </footer>
 <script src="{{ '/assets/js/main.js' | relative_url }}" defer="defer"></script>
 {%- if site.google_analytics -%}

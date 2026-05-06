@@ -27,12 +27,14 @@ layout: compress
   </script>
 
   <!-- Ambient Background Orbs -->
-  <div class="bg-orb w-72 h-72 bg-accent/25 dark:bg-accent-dark/15 top-20 -left-36 animate-float"></div>
-  <div class="bg-orb w-96 h-96 bg-amber-400/15 dark:bg-amber-500/10 top-1/3 -right-48 animate-float-slow"></div>
-  <div class="bg-orb w-64 h-64 bg-orange-300/15 dark:bg-orange-400/10 bottom-20 left-1/4 animate-float" style="animation-delay: 2s;"></div>
+  <div class="bg-orb w-72 h-72 bg-accent/20 dark:bg-accent-dark/10 top-[10%] -left-36 animate-float"></div>
+  <div class="bg-orb w-96 h-96 bg-amber-400/10 dark:bg-amber-500/5 top-[30%] -right-48 animate-float-slow"></div>
+  <div class="bg-orb w-64 h-64 bg-orange-300/10 dark:bg-orange-400/5 bottom-[20%] left-1/4 animate-float" style="animation-delay: 2s;"></div>
+  <div class="bg-orb w-80 h-80 bg-blue-500/10 dark:bg-blue-600/5 top-[60%] -left-40 animate-float-slow" style="animation-delay: 3s;"></div>
+  <div class="bg-orb w-56 h-56 bg-purple-400/10 dark:bg-purple-500/5 bottom-[10%] -right-20 animate-float" style="animation-delay: 1s;"></div>
 
   {% include navbar.html %}
-  <div class="wrapper {% if page.home %}wrapper-wide{% endif %}">
+  <div class="wrapper {% if page.home or page.wide_layout %}wrapper-wide{% endif %}">
     {% include author.html %}
     <main aria-label="Content">
       {{ content }}

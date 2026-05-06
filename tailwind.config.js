@@ -37,8 +37,8 @@ module.exports = {
         },
       },
       maxWidth: {
-        narrow: '660px',
-        wide: '880px',
+        narrow: '800px',
+        wide: '1100px',
       },
       animation: {
         'float': 'float 6s ease-in-out infinite',

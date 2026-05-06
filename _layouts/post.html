@@ -6,6 +6,11 @@ layout: compress
 {% include header.html %}
 
 <body data-theme="{{ site.mode }}" class="notransition font-sans antialiased">
+  <!-- Reading Progress Bar -->
+  <div id="reading-progress-container" class="fixed top-0 left-0 w-full h-1 bg-transparent z-50">
+    <div id="reading-progress-bar" class="h-full bg-accent w-0 transition-all duration-150 ease-out"></div>
+  </div>
+
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5XNRRZNM"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -53,6 +58,12 @@ layout: compress
             <span itemprop="author" itemscope itemtype="https://schema.org/Person">
               <span itemprop="name" class="border-b border-dotted border-slate-300 dark:border-slate-600">{{ site.author.name }}</span>
             </span>
+            {% assign words = content | number_of_words %}
+            {% assign read_time = words | divided_by: 200 | plus: 1 %}
+            <span class="flex items-center gap-1 before:content-['•'] before:mr-3 before:text-slate-300 dark:before:text-slate-600">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              {{ read_time }} min read
+            </span>
             <time hidden datetime="{{ page.modified | date_to_xmlschema }}" itemprop="dateModified">{{ page.date | date: "%b %d, %Y" }}</time>
             <span hidden itemprop="publisher" itemtype="Person">{{ site.author.name }}</span>
             <span hidden itemprop="image">{{ page.image }}</span>
@@ -89,5 +100,53 @@ layout: compress
 
     {% include footer.html %}
   </div>
+
+  <script>
+    // Reading Progress Bar
+    window.addEventListener('scroll', () => {
+      const scrollPx = document.documentElement.scrollTop;
+      const winHeightPx = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrollLen = Math.ceil(((scrollPx / winHeightPx) * 100) || 0);
+      document.getElementById('reading-progress-bar').style.width = scrollLen + '%';
+    });
+
+    // Copy Code Button
+    document.querySelectorAll('div.highlighter-rouge').forEach((block) => {
+      // Make sure the block is relative so we can position the button absolutely
+      block.style.position = 'relative';
+
+      const button = document.createElement('button');
+      button.className = 'copy-code-btn absolute top-2 right-2 p-1.5 rounded-md bg-slate-800 text-slate-300 opacity-0 transition-opacity duration-200 hover:bg-slate-700 hover:text-white border border-slate-700 shadow-sm flex items-center justify-center';
+      
+      // Copy icon SVG
+      button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>';
+      
+      block.addEventListener('mouseenter', () => button.classList.remove('opacity-0'));
+      block.addEventListener('mouseleave', () => button.classList.add('opacity-0'));
+
+      button.addEventListener('click', async () => {
+        // Find the code block. In Jekyll, it's usually inside <pre><code>
+        const code = block.querySelector('code');
+        if (!code) return;
+        
+        try {
+          await navigator.clipboard.writeText(code.innerText);
+          
+          // Change icon to checkmark
+          button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>';
+          button.classList.add('border-green-500/50', 'bg-green-500/10');
+          
+          setTimeout(() => {
+            button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>';
+            button.classList.remove('border-green-500/50', 'bg-green-500/10');
+          }, 2000);
+        } catch (err) {
+          console.error('Failed to copy text: ', err);
+        }
+      });
+
+      block.appendChild(button);
+    });
+  </script>
 </body>
 </html>
