@@ -41,7 +41,7 @@ keywords: "Dimas Tri Sasongko experience, AWS Cloud Engineer career, Cloud Engin
   <div class="certs-page">
 
     <section class="certs-section">
-      <h2 class="certs-section-title">Credentials <span class="certs-count">5</span></h2>
+      <h2 class="certs-section-title">Credentials <span class="certs-count">8</span></h2>
 
       <div class="certs-grid certs-grid--credentials">
 
@@ -112,6 +112,45 @@ keywords: "Dimas Tri Sasongko experience, AWS Cloud Engineer career, Cloud Engin
             <p class="cert-card-name">AWS Agentic AI Demonstrated</p>
             <p class="cert-card-meta">Completed: May 2026</p>
             <p class="cert-card-meta">Expires: <span class="expiry-date" data-expires="2027-05-31">May 2027</span></p>
+          </div>
+        </a>
+
+        <a href="https://www.credly.com/earner/earned/badge/b99b0b0b-321d-49f4-9398-105a6ef3ba80" target="_blank" rel="noopener" class="cert-card" data-expires="2027-06-06">
+          <div class="cert-card-badge">
+            <img src="https://images.credly.com/size/80x80/images/60d4b86c-cbec-4d31-aeb1-5e86864305a1/blob"
+                 onerror="this.onerror=null;"
+                 alt="AWS MLOps Demonstrated badge" width="56" height="56" loading="lazy" />
+          </div>
+          <div class="cert-card-info">
+            <p class="cert-card-name">AWS MLOps Demonstrated</p>
+            <p class="cert-card-meta">Completed: June 2026</p>
+            <p class="cert-card-meta">Expires: <span class="expiry-date" data-expires="2027-06-06">June 2027</span></p>
+          </div>
+        </a>
+
+        <a href="https://www.credly.com/earner/earned/badge/deb91fbc-9aa7-439c-9082-de7d0402805a" target="_blank" rel="noopener" class="cert-card" data-expires="2027-05-14">
+          <div class="cert-card-badge">
+            <img src="https://images.credly.com/size/80x80/images/8dd6f516-0dd3-4b5e-aacf-8e86e737a95d/blob"
+                 onerror="this.onerror=null;"
+                 alt="AWS Incident Response Demonstrated badge" width="56" height="56" loading="lazy" />
+          </div>
+          <div class="cert-card-info">
+            <p class="cert-card-name">AWS Incident Response Demonstrated</p>
+            <p class="cert-card-meta">Completed: May 2026</p>
+            <p class="cert-card-meta">Expires: <span class="expiry-date" data-expires="2027-05-14">May 2027</span></p>
+          </div>
+        </a>
+
+        <a href="https://www.credly.com/earner/earned/badge/58d01ca4-2286-45b2-8165-69a7e64f0250" target="_blank" rel="noopener" class="cert-card" data-expires="2027-05-04">
+          <div class="cert-card-badge">
+            <img src="https://images.credly.com/size/80x80/images/ed8cf03b-6269-4265-a65b-68e67e49ce6b/blob"
+                 onerror="this.onerror=null;"
+                 alt="AWS Application Networking Demonstrated badge" width="56" height="56" loading="lazy" />
+          </div>
+          <div class="cert-card-info">
+            <p class="cert-card-name">AWS Application Networking Demonstrated</p>
+            <p class="cert-card-meta">Completed: May 2026</p>
+            <p class="cert-card-meta">Expires: <span class="expiry-date" data-expires="2027-05-04">May 2027</span></p>
           </div>
         </a>
 
